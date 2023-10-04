@@ -1,9 +1,9 @@
 const dia = document.getElementById("dia");
 const hora = document.getElementById("hora");
-const minuto = document.getElementById("Minuto");
+const minuto = document.getElementById("minuto");
 const segundo = document.getElementById("segundo");
 
-const lancmento = "17 oct 2023";
+const lancmento = "29 march 2024";
 
 function countDown() {
   const dataLanc = new Date(lancmento);
@@ -11,15 +11,15 @@ function countDown() {
 
   const segTotal = (dataLanc - hoje) / 1000;
 
-  const finalDias = math.floor(segTotal / 60 / 60 / 24);
-  const finalHoras = math.floor(segTotal / 60 / 60) % 24;
-  const finalMinutos = math.floor(segTotal / 60) % 60;
-  const finalsegundos = math.floor(segTotal) % 60;
+  const finalDias = Math.floor(segTotal / 60 / 60 / 24);
+  const finalHoras = Math.floor(segTotal / 60 / 60) % 24;
+  const finalMinutos = Math.floor(segTotal / 60) % 60;
+  const finalSegundos = Math.floor(segTotal) % 60;
 
   dia.innerHTML = finalDias;
   hora.innerHTML = formatoTempo(finalHoras);
   minuto.innerHTML = formatoTempo(finalMinutos);
-  segundo.innerHTML = formatoTempo(finalsegundos);
+  segundo.innerHTML = formatoTempo(finalSegundos);
 }
 function formatoTempo(tempo) {
   return tempo < 10 ? `0${tempo}` : tempo;
